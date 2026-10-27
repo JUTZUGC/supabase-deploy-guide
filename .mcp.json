@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "supabase-guide": {
+      "command": "node",
+      "args": [
+        "mcp-server.mjs"
+      ]
+    }
+  }
+}

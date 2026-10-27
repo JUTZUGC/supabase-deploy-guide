@@ -1,0 +1,101 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "supabase",
+    "nameCn": "Supabase",
+    "repoName": "supabase-deploy-guide",
+    "oneLiner": "114k stars，Apache-2.0，开源 Postgres 开发平台，一条命令起本地全套后端",
+    "officialRepo": "https://github.com/supabase/supabase",
+    "officialDocs": "https://supabase.com/docs/guides/local-development",
+    "stars": "114k",
+    "license": "Apache-2.0",
+    "highlights": [
+      "114k stars：最主流的开源 Postgres 平台",
+      "全套本地栈：数据库、认证、存储、实时、函数",
+      "Studio 控制台：图形化建表、跑 SQL、管用户",
+      "CLI 一键起停：`supabase start` / `stop`",
+      "迁移可版本化：SQL 迁移跟着仓库走",
+      "Apache-2.0：可自托管可改"
+    ],
+    "mcpSupport": "Supabase 官方提供 MCP server，可让 Agent 直接操作项目；本仓库只负责本地栈部署，不注册 MCP。",
+    "webuiUrl": "http://127.0.0.1:54323",
+    "adapterPorts": "",
+    "collectedAt": "2026-10-27",
+    "verification": [
+      [
+        "仓库元数据已核对：114k stars、Apache-2.0、2019-10 建仓",
+        "已核对 2026-10-27"
+      ],
+      [
+        "官方文档确认本地开发使用 Supabase CLI + Docker",
+        "已核对 2026-10-27"
+      ],
+      [
+        "未实测 supabase start（需拉取数 GB 镜像）",
+        "说明 2026-10-27"
+      ]
+    ],
+    "deploy": {
+      "type": "docker",
+      "requires": [
+        "node"
+      ],
+      "steps": [
+        "npx -y supabase@latest init",
+        "npx -y supabase@latest start",
+        "npx -y supabase@latest status"
+      ],
+      "stepsPs": [
+        "npx.cmd -y supabase@latest init",
+        "npx.cmd -y supabase@latest start",
+        "npx.cmd -y supabase@latest status"
+      ],
+      "source": "https://supabase.com/docs/guides/local-development"
+    },
+    "pitfalls": [
+      "Docker 没启动：`supabase start` 会直接失败",
+      "端口被占：改 `config.toml` 里的端口再启动",
+      "拉镜像慢：先配好 Docker 镜像加速",
+      "旧数据卷不兼容：升级后 `supabase stop --no-backup` 重建",
+      "`service_role` 泄露：只放服务端环境变量",
+      "Windows 路径问题：项目放在无空格、非中文路径下"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/supabase-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/supabase-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "Supabase 部署",
+    "Supabase 本地 安装",
+    "Postgres 开发平台",
+    "Supabase CLI",
+    "本地 Supabase 教程",
+    "Supabase Docker",
+    "开源 Firebase 替代",
+    "Supabase Studio",
+    "Supabase 中文",
+    "自托管 Postgres"
+  ],
+  "topics": [
+    "supabase",
+    "postgres",
+    "self-hosted",
+    "docker",
+    "backend",
+    "database"
+  ]
+}
